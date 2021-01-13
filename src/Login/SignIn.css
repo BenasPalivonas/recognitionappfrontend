@@ -1,0 +1,10 @@
+.In{
+    border:5px solid black;
+    background:linear-gradient(rgba(73,74,151,0.75),rgba(143,61,135,0.75));
+    box-shadow: 2px 3px 9px 9px;
+    margin:0;
+    
+}
+.reg{
+    margin-top:10px;
+}

@@ -1,0 +1,11 @@
+.box{
+position: absolute;
+border:3px solid #149df2;
+flex-wrap: wrap;
+justify-content: center;
+cursor: pointer;
+}
+.parentDiv{
+    position: relative;
+    margin: auto;
+}

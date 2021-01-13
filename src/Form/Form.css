@@ -1,0 +1,29 @@
+.Submit{
+
+    padding:20px;
+    border:5px solid transparent;
+    border-radius:25px;
+    border-style:solid;
+    border-color:transparent;
+    outline:none;
+    width:200px;
+}
+.Submit:hover {background-color: #3e8e41}
+.Submit:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.Form{
+    padding:10px;
+    border:5px solid transparent;
+    border-radius:25px;
+    outline:none;
+    margin-right:5px;
+    margin-left:5px;
+    width:400px;
+}
+p{
+  color:white;
+  text-align:center;
+}

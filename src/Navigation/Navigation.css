@@ -1,0 +1,16 @@
+.text{
+  border:5px solid black;
+  padding:10px;
+  margin:0.5rem;
+  margin-right:20px;
+  background:linear-gradient(#494A97,#8F3D87);
+}
+.textDiv{
+    border-bottom:5px solid black;
+    display:flex;
+    
+    justify-content: flex-end;
+    margin-right:4em;
+    width:100%;
+     background:linear-gradient(#494A97,#8F3D87);
+}

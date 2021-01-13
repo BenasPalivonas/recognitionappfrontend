@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+}
+.picture{
+  justify-content: center;
+}
+.inline{
+  float:left;
+  border:1rem solid hsla(239, 68%, 69%, 0.514);
+  position:fixed;
+  top:70%;
+  left:2%;
+}
+.first{
+  margin-top: 10px;
+}
+.particles{
+position:fixed;
+z-index: -1;
+top:0;
+right:0;
+bottom:0;
+left:0;
+}
+.form{
+height:10rem;
+width:45rem;
+position:absolute;
+top:55%;
+left:50%;
+transform:translate(-50%,-50%);
+background:
+linear-gradient(115deg, transparent 75%, #494A97 75%) 0 0,
+linear-gradient(245deg, transparent 75%, #17186e 75%) 0 0,
+linear-gradient(115deg, transparent 75%, #ad31a1 75%) 7px -15px,
+linear-gradient(245deg, transparent 75%, #8F3D87 75%) 7px -15px,
+#742b6c;
+background-size: 15px 30px;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result{
+position:absolute;
+left:48%; 
+transform:translate(-50%,0);
+}
+.signIn{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+}
