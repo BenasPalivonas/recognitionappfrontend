@@ -33,7 +33,7 @@ class Register extends React.Component {
             alert("enter a valid email");
             return 0;
         }
-        fetch('https://whispering-peak-11656.herokuapp.com/register', {
+        fetch('http://localhost:3000/register', {
             method: 'post',
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify({

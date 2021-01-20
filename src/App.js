@@ -6,12 +6,11 @@ import logo2 from './Logo/logo2.png'
 import logo3 from './Logo/logo3test.png'
 import Navigation from './Navigation/Navigation'
 import Particles from 'react-particles-js';
-import Form from './Form/Form.js'
-import FaceReco from './FaceReco/FaceReco.js'
-import Box from './FaceReco/Box.js'
+import FaceRecoPage from './Pages/FaceRecoPage'
 import './FaceReco/FaceReco.css'
 import SignIn from './Login/SignIn.js';
 import Register from './Login/Register.js';
+import Menu from './Pages/Menu.js';
 const particlesParams =
 {
   particles: {
@@ -48,16 +47,13 @@ const particlesParams =
   }
 
 }
-
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      input: " ",
       url: " ",
       boxParms: {},
       page: "signIn",
-      user: {}
     }
   }
   loadUser = (loggedUser) => {
@@ -72,17 +68,7 @@ class App extends React.Component {
   assingBox(box) {
     this.setState({ boxParms: box });
   }
-  count = () => {
-    fetch('https://whispering-peak-11656.herokuapp.com/image', {
-      method: 'put',
-      headers: { 'Content-Type': "application/json" },
-      body: JSON.stringify({
-        id: this.state.user.id
-      })
-    }).then(response => response.json()).then(data => {
-      this.setState(Object.assign(this.state.user, { entries: data }))
-    }).catch(console.log)
-  }
+  // fetch('https://whispering-peak-11656.herokuapp.com/image'
   convertResponseToBox = (response, lenght) => {
     const pictureParams = document.getElementById('facePic')
     const width = Number(pictureParams.width);
@@ -95,25 +81,42 @@ class App extends React.Component {
     return (obj)
 
   }
-  onInput = (event) => {
-    this.setState({ input: event.target.value })
-  }
-  onClick = (event) => {
 
-    this.setState({ url: this.state.input })
-    fetch('https://whispering-peak-11656.herokuapp.com/getapi', {
-      method: 'post',
-      headers: { 'Content-Type': "application/json" },
-      body: JSON.stringify({
-        url: this.state.input
+  onClick = (event) => {
+    this.setState({ url: event })
+    console.log(event.length)
+    console.log(typeof (event))
+    console.log(event)
+    if (event.length > 0) {
+      fetch('http://localhost:3000/getapi', {
+        method: 'post',
+        headers: { 'Content-Type': "application/json" },
+        body: JSON.stringify({
+          url: event
+        })
       })
-    })
-      .then((response) => response.json()).then((response) => {
-        this.assingBox(this.convertResponseToBox(response, response.outputs[0].data.regions.length));
-      })
-      .catch((err) => {
-        console.log(err);
-      })
+        .then((response) => response.json()).then((response) => {
+          this.assingBox(this.convertResponseToBox(response, response.outputs[0].data.regions.length));
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+
+    }
+    //food
+    // fetch('http://localhost:3000/getfoodapi', {
+    //   method: 'post',
+    //   headers: { 'Content-Type': "application/json" },
+    //   body: JSON.stringify({
+    //     url: event
+    //   })
+    // })
+    //   .then((response) => response.json()).then((response) => {
+    //     console.log(response)
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   })
   }
 
   onRouteChange = (route) => {
@@ -122,7 +125,6 @@ class App extends React.Component {
   signOut = (route) => {
     this.setState({ url: "" });
     this.setState({ input: "" });
-    this.setState({ user: {} });
     this.onRouteChange(route);
   }
   render() {
@@ -146,24 +148,11 @@ class App extends React.Component {
                 <Register onRouteChange={this.onRouteChange} />
               </div>
               :
-              <div>
-
-                <div className='result' >
-                  <div className='parentDiv'>
-                    <FaceReco link={this.state.url} />
-                    <Box box={this.state.boxParms} />
-                  </div>
-                </div>
-                {/* <div className="inline">
-                  <Logo picture={logo1} marginTop='2rem' link="https://github.com/BenasPalivonas" />
-                  <Logo picture={logo2} marginTop='1.2rem' link="https://www.instagram.com/benusiaog/" />
-                  <Logo picture={logo3} marginRight='2rem' link="https://www.facebook.com/benas.palivonas" />
-                </div> */}
-
-                <div className="form">
-                  <Form onClick={this.onClick} onInput={this.onInput} count={this.count} user={this.state.user} />
-                </div>
+              <div className="menu">
+                <Menu onRouteChange={this.onRouteChange} />
               </div>
+          // <FaceRecoPage onClick={this.onClick} url={this.state.url} boxParms={this.state.boxParms} count={
+          //   this.count} />
         }
       </div>
 

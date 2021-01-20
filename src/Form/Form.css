@@ -14,6 +14,20 @@
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+.clear{
+  border-radius:25px;
+    border-style:solid;
+    border-color:transparent;
+    outline:none;
+}
+.clear:hover{
+background-color: #3e8e41
+}
+.clear:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 .Form{
     padding:10px;
     border:5px solid transparent;
