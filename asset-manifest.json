@@ -1,28 +1,31 @@
 {
   "files": {
-    "main.css": "/recognitionappfrontend/static/css/main.cd66629d.chunk.css",
-    "main.js": "/recognitionappfrontend/static/js/main.58d62c75.chunk.js",
-    "main.js.map": "/recognitionappfrontend/static/js/main.58d62c75.chunk.js.map",
-    "runtime-main.js": "/recognitionappfrontend/static/js/runtime-main.ff37c016.js",
-    "runtime-main.js.map": "/recognitionappfrontend/static/js/runtime-main.ff37c016.js.map",
+    "main.css": "/recognitionappfrontend/static/css/main.563458c4.chunk.css",
+    "main.js": "/recognitionappfrontend/static/js/main.84b8d0aa.chunk.js",
+    "main.js.map": "/recognitionappfrontend/static/js/main.84b8d0aa.chunk.js.map",
+    "runtime-main.js": "/recognitionappfrontend/static/js/runtime-main.2d04376a.js",
+    "runtime-main.js.map": "/recognitionappfrontend/static/js/runtime-main.2d04376a.js.map",
     "static/css/2.31461e4f.chunk.css": "/recognitionappfrontend/static/css/2.31461e4f.chunk.css",
-    "static/js/2.6128c05d.chunk.js": "/recognitionappfrontend/static/js/2.6128c05d.chunk.js",
-    "static/js/2.6128c05d.chunk.js.map": "/recognitionappfrontend/static/js/2.6128c05d.chunk.js.map",
-    "static/js/3.555a2470.chunk.js": "/recognitionappfrontend/static/js/3.555a2470.chunk.js",
-    "static/js/3.555a2470.chunk.js.map": "/recognitionappfrontend/static/js/3.555a2470.chunk.js.map",
+    "static/js/2.2728044a.chunk.js": "/recognitionappfrontend/static/js/2.2728044a.chunk.js",
+    "static/js/2.2728044a.chunk.js.map": "/recognitionappfrontend/static/js/2.2728044a.chunk.js.map",
+    "static/js/3.6a8732e3.chunk.js": "/recognitionappfrontend/static/js/3.6a8732e3.chunk.js",
+    "static/js/3.6a8732e3.chunk.js.map": "/recognitionappfrontend/static/js/3.6a8732e3.chunk.js.map",
     "index.html": "/recognitionappfrontend/index.html",
     "static/css/2.31461e4f.chunk.css.map": "/recognitionappfrontend/static/css/2.31461e4f.chunk.css.map",
-    "static/css/main.cd66629d.chunk.css.map": "/recognitionappfrontend/static/css/main.cd66629d.chunk.css.map",
-    "static/js/2.6128c05d.chunk.js.LICENSE.txt": "/recognitionappfrontend/static/js/2.6128c05d.chunk.js.LICENSE.txt",
+    "static/css/main.563458c4.chunk.css.map": "/recognitionappfrontend/static/css/main.563458c4.chunk.css.map",
+    "static/js/2.2728044a.chunk.js.LICENSE.txt": "/recognitionappfrontend/static/js/2.2728044a.chunk.js.LICENSE.txt",
     "static/media/Logo1.2fd05451.png": "/recognitionappfrontend/static/media/Logo1.2fd05451.png",
+    "static/media/color.6e0e514a.jpg": "/recognitionappfrontend/static/media/color.6e0e514a.jpg",
+    "static/media/face.8a646a7d.png": "/recognitionappfrontend/static/media/face.8a646a7d.png",
+    "static/media/food1.215be36e.jpg": "/recognitionappfrontend/static/media/food1.215be36e.jpg",
     "static/media/logo2.e744f904.png": "/recognitionappfrontend/static/media/logo2.e744f904.png",
     "static/media/logo3test.337c2494.png": "/recognitionappfrontend/static/media/logo3test.337c2494.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ff37c016.js",
+    "static/js/runtime-main.2d04376a.js",
     "static/css/2.31461e4f.chunk.css",
-    "static/js/2.6128c05d.chunk.js",
-    "static/css/main.cd66629d.chunk.css",
-    "static/js/main.58d62c75.chunk.js"
+    "static/js/2.2728044a.chunk.js",
+    "static/css/main.563458c4.chunk.css",
+    "static/js/main.84b8d0aa.chunk.js"
   ]
 }
