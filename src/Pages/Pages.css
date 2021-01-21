@@ -6,3 +6,7 @@
   text-shadow: 1px 1px rgb(39, 35, 35);
 
 }
+.Menu{
+    overflow: hidden;
+    white-space: nowrap;
+}

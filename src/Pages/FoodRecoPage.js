@@ -1,20 +1,24 @@
 import React from 'react'
+import '../App.css'
+import '../FaceReco/FaceReco.css'
 import Form from '../Form/Form.js'
 import DisplayImage from '../FaceReco/DisplayImage.js'
-import Box from '../FaceReco/Box.js'
-const FaceRecoPage = ({ url, boxParms, count, onClickFace }) => {
+import FoodRecoText from './FoodRecoText'
+const FoodRecoPage = ({ url, onClickFood, foodText }) => {
     return (
         <div>
             <div className='result' >
                 <div className='parentDiv'>
                     <DisplayImage link={url} />
-                    <Box box={boxParms} />
                 </div>
             </div>
             <div className="form">
-                <Form onClick={onClickFace} count={count} />
+                <Form onClick={onClickFood} />
+            </div>
+            <div className="foodText">
+                <FoodRecoText foodText={foodText} />
             </div>
         </div>
     )
 }
-export default FaceRecoPage
+export default FoodRecoPage;

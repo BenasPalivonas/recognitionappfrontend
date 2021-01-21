@@ -1,6 +1,7 @@
 import React from 'react'
 import './FaceReco.css'
 const Box = ({ box }) => {
+    console.log(box)
     const lenght = Object.keys(box).length;
     if (lenght > 0) {
         return (

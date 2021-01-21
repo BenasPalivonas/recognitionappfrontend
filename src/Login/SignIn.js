@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './SignIn.css';
 import { useDispatch } from 'react-redux'
-import { setUser } from '../actions'
-const SignIn = ({ onRouteChange }) => {
+import { setUser, setPage } from '../actions'
+const SignIn = () => {
     const dispatch = useDispatch();
     const [signInEmail, setSignInEmail] = useState("");
     const [signInPassword, setSignInPassword] = useState("")
@@ -19,7 +19,7 @@ const SignIn = ({ onRouteChange }) => {
 
             if (user.id) {
                 dispatch(setUser(user));
-                onRouteChange("home");
+                dispatch(setPage("menu"));
             }
             else {
                 alert("Incorrect login info");
@@ -56,7 +56,7 @@ const SignIn = ({ onRouteChange }) => {
                             className="b ph3 pv2 input-reset ba washed-blue bg-transparent grow pointer f6 dib" type="submit" value="Sign in" />
                     </div>
                     <div className="reg">
-                        <input onClick={() => onRouteChange('register')}
+                        <input onClick={() => dispatch(setPage('register'))}
                             className="b ph3 pv2 input-reset ba washed-blue bg-transparent grow pointer f6 dib" type="submit" value="Register" />
                     </div>
                 </form>

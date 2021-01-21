@@ -7,7 +7,6 @@ const Form = ({ onClick }) => {
     const user = useSelector(state => state.user);
     const dispatch = useDispatch();
     const count = () => {
-        console.log(user.id);
         fetch('http://localhost:3000/image', {
             method: 'put',
             headers: { 'Content-Type': "application/json" },
@@ -24,10 +23,10 @@ const Form = ({ onClick }) => {
         onClick(value);
     }
     return (
-        <div>
-            <p><b>Hello {user.name}, your pressed submit: {user.entries} times</b></p>
+        <div className="Form">
+            <p style={{ textAlign: "center" }}><b>Hello {user.name}, your pressed submit: {user.entries} times</b></p>
             <button className="clear pointer" onClick={() => setValue("")} > Clear </button>
-            <input type="text" name="text" placeholder="enter image link" value={value} className="Form" onChange={(event) => setValue(event.target.value)} />
+            <input type="text" name="text" placeholder="enter image link" value={value} className="FormInput" onChange={(event) => setValue(event.target.value)} />
             <button type="button" className="Submit pointer" onClick={buttonClick}  >Submit</button>
 
         </div>

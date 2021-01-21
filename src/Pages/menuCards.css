@@ -1,11 +1,11 @@
-.Tilt{
+.TiltMenu{
     background:linear-gradient(0.75turn,#494A97,#8F3D87);
     margin-right:0;
     justify-content:center;
     vertical-align: middle;
     margin:0;
-    height: 10rem;
-    width: 10rem;
+    height: 15rem;
+    width: 15rem;
     margin: 0px;
 }
 
@@ -14,24 +14,30 @@
     vertical-align: middle;
     margin:0;
 }
-
+@media only screen and (max-width:1500px){
+    .TiltMenu{
+   height: 11rem;
+    width: 11rem;
+  
+    }
+}
 @media only screen and (max-width:1000px){
-    .Tilt{
-   height: 8rem;
-    width: 8rem;
+    .TiltMenu{
+   height: 11rem;
+    width: 11rem;
   
     }
 }
 @media only screen and (max-width:769px){
-  .Tilt{
-  height: 7 rem;
-    width: 7rem;
+  .TiltMenu{
+  height: 9rem;
+    width: 9rem;
     }
 }
 @media only screen and (max-width:576px){
-   .Tilt{
-   height: 6rem;
-    width: 6rem;
-    margin: 0px;
+   .TiltMenu{
+   height: 9rem;
+    width: 9rem;
+    
     }
 }

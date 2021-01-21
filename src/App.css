@@ -59,3 +59,17 @@ transform:translate(-50%,-50%);
   transform:translate(-50%,-50%);
 
 }
+
+
+@media only screen and (max-width:1000px){
+    .inline{
+   top:75%;
+  left:2%;
+    }
+}
+@media only screen and (max-width:569px){
+  .inline{
+ top:80%;
+  left:5%;
+    }
+}

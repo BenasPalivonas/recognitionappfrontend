@@ -1,24 +1,25 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import Tilt from 'react-tilt'
-import '../Logo/Logo.css'
+import './menuCards.css'
+
 import './Pages.css'
+import { setPage } from '../actions/index'
+const MenuCards = ({ picture, text, page }) => {
+    const dispatch = useDispatch()
+    return (
+        <div className="cbl" style={{ justifyContent: 'center', alignContent: 'center', marginLeft: '2rem', marginTop: '1rem', marginBottom: '1rem', display: 'inline-block', verticalAlign: 'top' }}>
+            <Tilt className="TiltMenu shadow-2 pointer" options={{ max: 70 }}>
 
-class MenuCards extends React.Component {
-    render() {
-        return (
-
-            <div className="cbl" style={{ justifyContent: 'center', alignContent: 'center', marginLeft: '2rem', marginTop: '1rem', marginBottom: '1rem', display: 'inline-block', verticalAlign: 'top', marginRight: this.props.marginRight }}>
-                <Tilt className="Tilt br2 shadow-2 picture pointer" options={{ max: 70 }} style={{ height: '15rem', width: '15rem', margin: '0px' }}>
-
-                    <div className="Tilt-inner">
-                        <p className="menuText"><strong>{this.props.text}</strong></p>
-                        <div onClick={() => this.props.onRouteChange("signIn")}><img src={this.props.picture} alt="logo" style={{ marginTop: '0.5rem', alignSelf: 'center' }} />
-                        </div>
+                <div className="Tilt-inner">
+                    <p className="menuText"><strong>{text}</strong></p>
+                    <div onClick={() => dispatch(setPage(page))}><img src={picture} alt="logo" style={{ marginTop: '0.5rem', alignSelf: 'center' }} />
                     </div>
-                </Tilt>
+                </div>
+            </Tilt>
 
-            </div >
-        );
-    }
+        </div >
+    );
+
 }
 export default MenuCards;

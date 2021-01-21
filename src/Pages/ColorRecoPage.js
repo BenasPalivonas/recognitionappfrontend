@@ -1,20 +1,26 @@
 import React from 'react'
+import '../App.css'
+import '../FaceReco/FaceReco.css'
 import Form from '../Form/Form.js'
 import DisplayImage from '../FaceReco/DisplayImage.js'
-import Box from '../FaceReco/Box.js'
-const FaceRecoPage = ({ url, boxParms, count, onClickFace }) => {
+import ColorValues from './ColorValues.js'
+const ColorRecoPage = ({ url, onClickColor, colorValues }) => {
     return (
         <div>
             <div className='result' >
                 <div className='parentDiv'>
                     <DisplayImage link={url} />
-                    <Box box={boxParms} />
                 </div>
             </div>
             <div className="form">
-                <Form onClick={onClickFace} count={count} />
+                <Form onClick={onClickColor} />
+            </div>
+            <div className="foodText">
+                <br></br>
+
+                <ColorValues colorValues={colorValues} />
             </div>
         </div>
     )
 }
-export default FaceRecoPage
+export default ColorRecoPage;

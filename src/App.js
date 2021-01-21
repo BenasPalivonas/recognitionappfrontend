@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Logo from './Logo/Logo.js'
 import logo1 from './Logo/Logo1.png'
@@ -11,6 +11,10 @@ import './FaceReco/FaceReco.css'
 import SignIn from './Login/SignIn.js';
 import Register from './Login/Register.js';
 import Menu from './Pages/Menu.js';
+import FoodRecoPage from './Pages/FoodRecoPage.js'
+import ColorRecoPage from './Pages/ColorRecoPage.js'
+import { useSelector, useDispatch } from 'react-redux'
+import { setPage } from './actions';
 const particlesParams =
 {
   particles: {
@@ -47,29 +51,15 @@ const particlesParams =
   }
 
 }
-class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      url: " ",
-      boxParms: {},
-      page: "signIn",
-    }
-  }
-  loadUser = (loggedUser) => {
-    this.setState({ user: loggedUser });
-  }
-  // componentDidMount() {
-  //   fetch('http://localhost:3000')
-  //     .then(response => response.json())
-  //     .then(data => console.log(data));
-  // }
-
-  assingBox(box) {
-    this.setState({ boxParms: box });
-  }
+const App = () => {
+  const dispatch = useDispatch()
+  const [url, setUrl] = useState("")
+  const [boxParms, setBoxParms] = useState({})
+  const [foodText, setFoodText] = useState({})
+  const [colorValues, setColorValues] = useState([])
+  const page = useSelector(state => state.page)
   // fetch('https://whispering-peak-11656.herokuapp.com/image'
-  convertResponseToBox = (response, lenght) => {
+  const convertResponseToBox = (response, lenght) => {
     const pictureParams = document.getElementById('facePic')
     const width = Number(pictureParams.width);
     const height = Number(pictureParams.height);
@@ -79,14 +69,9 @@ class App extends React.Component {
       obj.push({ id: index, top_row: Number(box.top_row) * height, left_col: Number(box.left_col) * width, bottom_row: height - (height * Number(box.bottom_row)), right_col: width - (width * Number(box.right_col)) });
     }
     return (obj)
-
   }
-
-  onClick = (event) => {
-    this.setState({ url: event })
-    console.log(event.length)
-    console.log(typeof (event))
-    console.log(event)
+  const onClickFace = (event) => {
+    setUrl(event)
     if (event.length > 0) {
       fetch('http://localhost:3000/getapi', {
         method: 'post',
@@ -96,69 +81,102 @@ class App extends React.Component {
         })
       })
         .then((response) => response.json()).then((response) => {
-          this.assingBox(this.convertResponseToBox(response, response.outputs[0].data.regions.length));
+          setBoxParms(convertResponseToBox(response, response.outputs[0].data.regions.length));
         })
         .catch((err) => {
           console.log(err);
         })
 
     }
-    //food
-    // fetch('http://localhost:3000/getfoodapi', {
-    //   method: 'post',
-    //   headers: { 'Content-Type': "application/json" },
-    //   body: JSON.stringify({
-    //     url: event
-    //   })
-    // })
-    //   .then((response) => response.json()).then((response) => {
-    //     console.log(response)
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   })
+  }
+  const onClickFood = (event) => {
+    setUrl(event)
+    fetch('http://localhost:3000/getfoodapi', {
+      method: 'post',
+      headers: { 'Content-Type': "application/json" },
+      body: JSON.stringify({
+        url: event
+      })
+    })
+      .then((response) => response.json()).then((response) => {
+        let answer = []
+        response.outputs[0].data.concepts.forEach(food => {
+          if (food.value * 100 > 20) {
+            let foodProcent = (food.value * 100).toString()[0] + (food.value * 100).toString()[1] + "%"
+            answer.push(food.name + ": " + foodProcent);
+          }
+        })
+        setFoodText(answer);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
-  onRouteChange = (route) => {
-    this.setState({ page: route });
+  const onClickColor = (event) => {
+    setUrl(event)
+    fetch('http://localhost:3000/getcolorapi', {
+      method: 'post',
+      headers: { 'Content-Type': "application/json" },
+      body: JSON.stringify({
+        url: event
+      })
+    })
+      .then((response) => response.json()).then((response) => {
+        setColorValues(response.outputs[0].data.colors)
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
-  signOut = (route) => {
-    this.setState({ url: "" });
-    this.setState({ input: "" });
-    this.onRouteChange(route);
+  const signOut = (route) => {
+    setUrl("")
+    setFoodText({})
+    dispatch(setPage(route))
   }
-  render() {
-    return (
-      <div >
-        <Navigation className="nav" signOut={this.signOut} current
-          Page={this.state.page} />
-        <Particles className="particles" params={particlesParams} />
-        <div className="inline">
-          <Logo picture={logo1} marginTop='2rem' link="https://github.com/BenasPalivonas" />
-          <Logo picture={logo2} marginTop='1.2rem' link="https://www.instagram.com/benusiaog/" />
-          <Logo picture={logo3} marginRight='2rem' link="https://www.facebook.com/benas.palivonas" />
-        </div>
-        {
-          this.state.page === "signIn" ?
-            <div className="signIn">
-              <SignIn className="signIn" loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
-            </div>
-            : this.state.page === "register" ?
-              <div className="signIn">
-                <Register onRouteChange={this.onRouteChange} />
-              </div>
-              :
-              <div className="menu">
-                <Menu onRouteChange={this.onRouteChange} />
-              </div>
-          // <FaceRecoPage onClick={this.onClick} url={this.state.url} boxParms={this.state.boxParms} count={
-          //   this.count} />
-        }
+
+  return (
+    <div >
+      <Navigation className="nav" signOut={signOut} />
+      <Particles className="particles" params={particlesParams} />
+      <div className="inline">
+        <Logo picture={logo1} marginTop='2rem' link="https://github.com/BenasPalivonas" />
+        <Logo picture={logo2} marginTop="1rem" link="https://www.instagram.com/benusiaog/" />
+        <Logo picture={logo3} marginRight='2rem' link="https://www.facebook.com/benas.palivonas" />
       </div>
-
-
-    );
-  }
+      {
+        page === "signIn" ?
+          <div className="signIn">
+            <SignIn className="signIn" />
+          </div>
+          : page === "register" ?
+            <div className="signIn">
+              <Register />
+            </div>
+            : page === "menu" ?
+              <div className="menu">
+                <Menu />
+              </div>
+              : page === "faceReco" ?
+                <div>
+                  <FaceRecoPage onClickFace={onClickFace} url={url} boxParms={boxParms} />
+                </div>
+                : page === "foodReco" ?
+                  <div>
+                    <FoodRecoPage onClickFood={onClickFood} foodText={foodText} url={url} />
+                  </div>
+                  : page === "colorReco" ?
+                    <div>
+                      <ColorRecoPage onClickColor={onClickColor} url={url} colorValues={colorValues} />
+                    </div>
+                    : <div>
+                      {
+                        setPage("signIn")
+                      }
+                    </div>
+      }
+    </div>
+  );
 }
 
 

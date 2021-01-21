@@ -9,3 +9,30 @@ cursor: pointer;
     position: relative;
     margin: auto;
 }
+.foodText{
+font-family: 'Ubuntu', sans-serif;
+color:white;
+position:absolute;
+font-size:1.3rem;
+text-align:left;
+left:84%; 
+transform:translate(-50%,0);
+}
+@media only screen and (max-width:600px){
+  .foodText{
+      left:100%;
+margin-left:1rem;
+    }
+}
+@media only screen and (max-width:1450px){
+  .foodText{
+      left:90%;
+
+    }
+}
+@media only screen and (max-width:1135px){
+  .foodText{
+      left:95%;
+
+    }
+}

@@ -8,9 +8,9 @@ const Menu = ({ onRouteChange }) => {
 
     return (
         <div className="Menu">
-            <MenuCards onRouteChange={onRouteChange} picture={faceLogo} text={"Facial Recognition"} marginTop='2rem' link="https://github.com/BenasPalivonas" />
-            <MenuCards onRouteChange={onRouteChange} picture={foodLogo} text={"Food Recognition"} marginTop='2rem' link="https://github.com/BenasPalivonas" />
-            <MenuCards onRouteChange={onRouteChange} picture={color} text={"Color Detection"} marginTop='2rem' link="https://github.com/BenasPalivonas" />
+            <MenuCards picture={faceLogo} text={"Facial Recognition"} page={"faceReco"} />
+            <MenuCards picture={foodLogo} text={"Food Recognition"} page={"foodReco"} />
+            <MenuCards picture={color} text={"Color Detection"} page={"colorReco"} />
         </div>
     )
 }
