@@ -2,6 +2,7 @@ import React from 'react'
 import Form from '../Form/Form.js'
 import DisplayImage from '../FaceReco/DisplayImage.js'
 import Box from '../FaceReco/Box.js'
+
 const FaceRecoPage = ({ url, boxParms, count, onClickFace }) => {
     return (
         <div>

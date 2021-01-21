@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import './Navigation.css'
+import { setPage } from '../actions/index'
 var change
+
 const Navigation = ({ signOut }) => {
+    const dispatch = useDispatch();
     const [text, setText] = useState("")
     const page = useSelector(state => state.page)
     useEffect(() => {
@@ -24,9 +27,18 @@ const Navigation = ({ signOut }) => {
             {
                 page !== "signIn" && page !== "register" && page !== "menu" ?
                     <div className="navigation">
-                        <button className="text dim pointer">Face Reco</button>
-                        <button className="text dim pointer">foodReco</button>
-                        <button className="text dim pointer">colorReco</button>
+                        <button onClick={() => {
+                            dispatch(setPage("faceReco"))
+
+                        }} className="text dim pointer">Face Reco</button>
+                        <button onClick={() => {
+                            dispatch(setPage("foodReco"))
+
+                        }} className="text dim pointer">Food Reco</button>
+                        <button onClick={() => {
+                            dispatch(setPage("colorReco"))
+
+                        }} className="text dim pointer">Color Reco</button>
                     </div>
                     :
                     <div></div>

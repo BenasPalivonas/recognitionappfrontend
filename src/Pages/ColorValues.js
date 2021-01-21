@@ -1,7 +1,8 @@
-
+import { useSelector } from "react-redux";
 const ColorValues = ({ colorValues }) => {
     console.log(colorValues);
-    if (colorValues.length > 0) {
+    const page = useSelector(state => state.page)
+    if (colorValues.length > 0 && page === "colorReco") {
         return (
             <div >
                 Color Values:

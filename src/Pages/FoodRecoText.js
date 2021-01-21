@@ -1,6 +1,8 @@
+import { useSelector } from 'react-redux'
 const FoodRecoText = ({ foodText }) => {
+    const page = useSelector(state => state.page)
     console.log(foodText)
-    if (foodText.length) {
+    if (foodText.length && page === "foodReco") {
         return (
             <div>
                 <p>probabilities:</p>

@@ -53,7 +53,9 @@ const particlesParams =
 }
 const App = () => {
   const dispatch = useDispatch()
-  const [url, setUrl] = useState("")
+  const [urlFace, setUrlFace] = useState("")
+  const [urlFood, setUrlFood] = useState("")
+  const [urlColor, setUrlColor] = useState("")
   const [boxParms, setBoxParms] = useState({})
   const [foodText, setFoodText] = useState({})
   const [colorValues, setColorValues] = useState([])
@@ -71,7 +73,7 @@ const App = () => {
     return (obj)
   }
   const onClickFace = (event) => {
-    setUrl(event)
+    setUrlFace(event)
     if (event.length > 0) {
       fetch('https://whispering-peak-11656.herokuapp.com/getapi', {
         method: 'post',
@@ -90,7 +92,7 @@ const App = () => {
     }
   }
   const onClickFood = (event) => {
-    setUrl(event)
+    setUrlFood(event)
     fetch('https://whispering-peak-11656.herokuapp.com/getfoodapi', {
       method: 'post',
       headers: { 'Content-Type': "application/json" },
@@ -114,7 +116,7 @@ const App = () => {
   }
 
   const onClickColor = (event) => {
-    setUrl(event)
+    setUrlColor(event)
     fetch('https://whispering-peak-11656.herokuapp.com/getcolorapi', {
       method: 'post',
       headers: { 'Content-Type': "application/json" },
@@ -130,7 +132,9 @@ const App = () => {
       })
   }
   const signOut = (route) => {
-    setUrl("")
+    setUrlFood("")
+    setUrlColor("")
+    setUrlFace("")
     setFoodText({})
     dispatch(setPage(route))
   }
@@ -159,15 +163,15 @@ const App = () => {
               </div>
               : page === "faceReco" ?
                 <div>
-                  <FaceRecoPage onClickFace={onClickFace} url={url} boxParms={boxParms} />
+                  <FaceRecoPage onClickFace={onClickFace} url={urlFace} boxParms={boxParms} />
                 </div>
                 : page === "foodReco" ?
                   <div>
-                    <FoodRecoPage onClickFood={onClickFood} foodText={foodText} url={url} />
+                    <FoodRecoPage onClickFood={onClickFood} foodText={foodText} url={urlFood} />
                   </div>
                   : page === "colorReco" ?
                     <div>
-                      <ColorRecoPage onClickColor={onClickColor} url={url} colorValues={colorValues} />
+                      <ColorRecoPage onClickColor={onClickColor} url={urlColor} colorValues={colorValues} />
                     </div>
                     : <div>
                       {

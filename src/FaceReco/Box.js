@@ -1,9 +1,11 @@
 import React from 'react'
 import './FaceReco.css'
+import { useSelector } from 'react-redux'
 const Box = ({ box }) => {
+    const page = useSelector(state => state.page)
     console.log(box)
     const lenght = Object.keys(box).length;
-    if (lenght > 0) {
+    if (lenght > 0 && page === "faceReco") {
         return (
             <div>
                 {
