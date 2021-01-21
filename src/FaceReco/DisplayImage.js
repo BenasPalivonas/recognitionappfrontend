@@ -4,7 +4,7 @@ const DisplayImage = ({ link }) => {
 
     return (
         <div >
-            <img alt="" src={link} height='390px' width='auto' id='facePic' style={{ marginRight: "5px" }} />
+            <img alt="" src={link} height='305px' width='auto' id='facePic' style={{ marginRight: "5px" }} />
         </div>
 
     );

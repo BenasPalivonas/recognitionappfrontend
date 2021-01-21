@@ -18,7 +18,7 @@
 .navigation{
   margin-right:calc(40%/2)
 }
-@media only screen and (max-width:1300px){
+@media only screen and (max-width:1400px){
  .navigation{
   margin-right:auto
 }
@@ -26,12 +26,12 @@
     font-size:2.8rem;
 }
 }
-@media only screen and (max-width:1000px){
+@media only screen and (max-width:1056px){
 .navigation{
   margin-right:auto;
 }
 .text{
-    font-size:2rem;
+    font-size:1.8rem;
 }
 }
 @media only screen and (max-width:770px){
@@ -42,12 +42,12 @@
     font-size:1.3rem;
 }
 }
-@media only screen and (max-width:577px){
+@media only screen and (max-width:590px){
   .navigation{
   margin-right:0;
 }
 .text{
-    font-size:1.2rem;
+    font-size:1.1rem;
 }
 }
 
