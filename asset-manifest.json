@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/recognitionappfrontend/static/css/main.563458c4.chunk.css",
-    "main.js": "/recognitionappfrontend/static/js/main.420b7336.chunk.js",
-    "main.js.map": "/recognitionappfrontend/static/js/main.420b7336.chunk.js.map",
+    "main.js": "/recognitionappfrontend/static/js/main.dcc8cf5b.chunk.js",
+    "main.js.map": "/recognitionappfrontend/static/js/main.dcc8cf5b.chunk.js.map",
     "runtime-main.js": "/recognitionappfrontend/static/js/runtime-main.2d04376a.js",
     "runtime-main.js.map": "/recognitionappfrontend/static/js/runtime-main.2d04376a.js.map",
     "static/css/2.31461e4f.chunk.css": "/recognitionappfrontend/static/css/2.31461e4f.chunk.css",
-    "static/js/2.2728044a.chunk.js": "/recognitionappfrontend/static/js/2.2728044a.chunk.js",
-    "static/js/2.2728044a.chunk.js.map": "/recognitionappfrontend/static/js/2.2728044a.chunk.js.map",
+    "static/js/2.0c46245e.chunk.js": "/recognitionappfrontend/static/js/2.0c46245e.chunk.js",
+    "static/js/2.0c46245e.chunk.js.map": "/recognitionappfrontend/static/js/2.0c46245e.chunk.js.map",
     "static/js/3.6a8732e3.chunk.js": "/recognitionappfrontend/static/js/3.6a8732e3.chunk.js",
     "static/js/3.6a8732e3.chunk.js.map": "/recognitionappfrontend/static/js/3.6a8732e3.chunk.js.map",
     "index.html": "/recognitionappfrontend/index.html",
     "static/css/2.31461e4f.chunk.css.map": "/recognitionappfrontend/static/css/2.31461e4f.chunk.css.map",
     "static/css/main.563458c4.chunk.css.map": "/recognitionappfrontend/static/css/main.563458c4.chunk.css.map",
-    "static/js/2.2728044a.chunk.js.LICENSE.txt": "/recognitionappfrontend/static/js/2.2728044a.chunk.js.LICENSE.txt",
+    "static/js/2.0c46245e.chunk.js.LICENSE.txt": "/recognitionappfrontend/static/js/2.0c46245e.chunk.js.LICENSE.txt",
     "static/media/Logo1.2fd05451.png": "/recognitionappfrontend/static/media/Logo1.2fd05451.png",
     "static/media/color.6e0e514a.jpg": "/recognitionappfrontend/static/media/color.6e0e514a.jpg",
     "static/media/face.8a646a7d.png": "/recognitionappfrontend/static/media/face.8a646a7d.png",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.2d04376a.js",
     "static/css/2.31461e4f.chunk.css",
-    "static/js/2.2728044a.chunk.js",
+    "static/js/2.0c46245e.chunk.js",
     "static/css/main.563458c4.chunk.css",
-    "static/js/main.420b7336.chunk.js"
+    "static/js/main.dcc8cf5b.chunk.js"
   ]
 }
