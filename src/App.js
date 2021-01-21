@@ -58,7 +58,7 @@ const App = () => {
   const [foodText, setFoodText] = useState({})
   const [colorValues, setColorValues] = useState([])
   const page = useSelector(state => state.page)
-  // fetch('https://whispering-peak-11656.herokuapp.com/image'
+
   const convertResponseToBox = (response, lenght) => {
     const pictureParams = document.getElementById('facePic')
     const width = Number(pictureParams.width);
@@ -73,7 +73,7 @@ const App = () => {
   const onClickFace = (event) => {
     setUrl(event)
     if (event.length > 0) {
-      fetch('http://localhost:3000/getapi', {
+      fetch('https://whispering-peak-11656.herokuapp.com/getapi', {
         method: 'post',
         headers: { 'Content-Type': "application/json" },
         body: JSON.stringify({
@@ -91,7 +91,7 @@ const App = () => {
   }
   const onClickFood = (event) => {
     setUrl(event)
-    fetch('http://localhost:3000/getfoodapi', {
+    fetch('https://whispering-peak-11656.herokuapp.com/getfoodapi', {
       method: 'post',
       headers: { 'Content-Type': "application/json" },
       body: JSON.stringify({
@@ -115,7 +115,7 @@ const App = () => {
 
   const onClickColor = (event) => {
     setUrl(event)
-    fetch('http://localhost:3000/getcolorapi', {
+    fetch('https://whispering-peak-11656.herokuapp.com/getcolorapi', {
       method: 'post',
       headers: { 'Content-Type': "application/json" },
       body: JSON.stringify({

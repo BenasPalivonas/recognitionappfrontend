@@ -7,7 +7,7 @@ const Form = ({ onClick }) => {
     const user = useSelector(state => state.user);
     const dispatch = useDispatch();
     const count = () => {
-        fetch('http://localhost:3000/image', {
+        fetch('https://whispering-peak-11656.herokuapp.com/image', {
             method: 'put',
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify({

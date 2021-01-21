@@ -19,7 +19,7 @@ const Register = () => {
             alert("enter a valid email");
             return 0;
         }
-        fetch('http://localhost:3000/register', {
+        fetch('https://whispering-peak-11656.herokuapp.com/register', {
             method: 'post',
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify({
