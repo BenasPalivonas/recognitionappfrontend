@@ -8,6 +8,7 @@ const Register = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const onSubmitResgister = (event) => {
+        console.log("called");
         event.preventDefault()
         let found = false;
         for (let i = 0; i < email.length; i++) {
@@ -19,7 +20,7 @@ const Register = () => {
             alert("enter a valid email");
             return 0;
         }
-        fetch('https://whispering-peak-11656.herokuapp.com/register', {
+        fetch('http://whispering-peak-11656.herokuapp.com/register', {
             method: 'post',
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify({
@@ -46,7 +47,7 @@ const Register = () => {
         )
     }
     return (
-        <article className="br2 ba dark-gray b--black-10  w100 
+        <article className="br2 ba dark-gray b--black-10  w100
           In ">
             <main className="pa4 washed-blue">
                 <form className="measure center">

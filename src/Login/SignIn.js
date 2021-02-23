@@ -8,7 +8,8 @@ const SignIn = () => {
     const [signInPassword, setSignInPassword] = useState("")
     const onSubmitSignIn = (event) => {
         event.preventDefault();
-        fetch('https://whispering-peak-11656.herokuapp.com/signin', {
+        console.log("called");
+        fetch('http://whispering-peak-11656.herokuapp.com/signin', {
             method: 'post',
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify({
@@ -18,6 +19,7 @@ const SignIn = () => {
         }).then(response => response.json()).then(user => {
 
             if (user.id) {
+                console.log(user.id)
                 dispatch(setUser(user));
                 dispatch(setPage("menu"));
             }
@@ -31,7 +33,7 @@ const SignIn = () => {
     }
 
     return (
-        <article className="br2 ba dark-gray b--black-10  w100 
+        <article className="br2 ba dark-gray b--black-10  w100
           In ">
             <main className="pa4 washed-blue">
                 <form className="measure center">

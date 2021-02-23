@@ -83,6 +83,7 @@ const App = () => {
         })
       })
         .then((response) => response.json()).then((response) => {
+          console.log(response);
           setBoxParms(convertResponseToBox(response, response.outputs[0].data.regions.length));
         })
         .catch((err) => {
@@ -101,6 +102,7 @@ const App = () => {
       })
     })
       .then((response) => response.json()).then((response) => {
+        console.log(response)
         let answer = []
         response.outputs[0].data.concepts.forEach(food => {
           if (food.value * 100 > 20) {
@@ -125,6 +127,7 @@ const App = () => {
       })
     })
       .then((response) => response.json()).then((response) => {
+        console.log(response)
         setColorValues(response.outputs[0].data.colors)
       })
       .catch((err) => {
