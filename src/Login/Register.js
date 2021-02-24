@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './SignIn.css';
-import { setPage } from '../actions/index'
+import { setPage, setUser } from '../actions/index'
 import { useDispatch } from 'react-redux';
 const Register = () => {
     const dispatch = useDispatch();
@@ -20,6 +20,11 @@ const Register = () => {
             alert("enter a valid email");
             return 0;
         }
+        var user = {
+            email: email,
+            name: username,
+            password: password
+        }
         fetch('http://whispering-peak-11656.herokuapp.com/register', {
             method: 'post',
             headers: { 'Content-Type': "application/json" },
@@ -37,8 +42,8 @@ const Register = () => {
                 alert(data);
             }
             else if (data) {
-                dispatch(setPage("signIn"))
-
+                dispatch(setPage("menu"))
+                dispatch(setUser(user));
             }
             else {
                 alert('unable to register');
