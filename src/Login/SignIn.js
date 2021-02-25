@@ -9,7 +9,7 @@ const SignIn = () => {
     const onSubmitSignIn = (event) => {
         event.preventDefault();
         console.log("called");
-        fetch('http://whispering-peak-11656.herokuapp.com/signin', {
+        fetch('https://whispering-peak-11656.herokuapp.com/signin', {
             method: 'post',
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify({

@@ -25,7 +25,7 @@ const Register = () => {
             name: username,
             password: password
         }
-        fetch('http://whispering-peak-11656.herokuapp.com/register', {
+        fetch('https://whispering-peak-11656.herokuapp.com/register', {
             method: 'post',
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify({
